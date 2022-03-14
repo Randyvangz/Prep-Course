@@ -10,7 +10,7 @@ function devolverPrimerElemento(array) {
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-  return (array[array.length - 1])
+  return array[array.length - 1]
 }
 
 
@@ -26,11 +26,10 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  var nuevaCad = []
   for (var i = 0; i < array.length; i++) {
-    nuevaCad[i] = array[i] + 1
+    array[i] = array[i] + 1
   }
-  return nuevaCad
+  return array
 }
 
 
@@ -67,6 +66,7 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  //return array.includes(elemento);
   for (var i = 0; i < array.length; i++) {
     if (array[i] === elemento) {
       return true
@@ -92,6 +92,7 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  //return agregarNumeros(resultadosTest);
   var promedio = 0
   var suma = 0
   for (var i = 0; i < resultadosTest.length; i++) {
@@ -122,6 +123,7 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
   if (arguments.length < 1) return 0
+  //if (arguments.length === 1) return arguments
   var total = 1
   for (var i = 0; i < arguments.length; i++) {
     total = total * arguments[i]
@@ -173,16 +175,13 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  var aux = arreglo[0];
-
-  for (var i = 0; i < arreglo.length; i++) {
-    if (arreglo[i] !== aux) {
-      return true;
+  for (var i =0 ; i < arreglo.length - 1; i++) {
+    if(arreglo[i] !== arreglo[i+1]){
+      return false
     }
   }
-   return false;
-}
-
+  return true
+} 
 
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
